@@ -59,7 +59,7 @@ export const creations = [
   {
     type: "Clay",
     media: "/images/Clay_Magnet_SolESombra.jpg", 
-    title: "Magnet of a Restaurant's House Front",
+    title: "Magnet of a Restaurant's House",
     description: "Air Dry Clay",
     isVideo: false,
   },
