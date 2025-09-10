@@ -2,13 +2,6 @@
 export const creations = [
   {
     type: "Clay",
-    media: "/images/Clay_Angel_Sunny.jpg",
-    title: "Sunny",
-    description: "Hand-sculpted air dry clay",
-    isVideo: false,
-  },
-  {
-    type: "Clay",
     media: "/images/Clay_Dirty.jpg", 
     title: "The Cat That Became Dirt",
     description: "Hand-sculpted air dry clay",
@@ -32,6 +25,13 @@ export const creations = [
     type: "Clay",
     media: "/images/Clay_Yellow_CareBear.jpg", 
     title: "Funshine Bear Desk Buddy / Charm",
+    description: "Hand-sculpted air dry clay",
+    isVideo: false,
+  },
+    {
+    type: "Clay",
+    media: "/images/Clay_Angel_Sunny.jpg",
+    title: "Sunny",
     description: "Hand-sculpted air dry clay",
     isVideo: false,
   },
