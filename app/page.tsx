@@ -121,7 +121,7 @@ export default function Home() {
                   <li>• Custom cat/cats</li>
                   <li>• Personalization of the wallpaper, the framed painting, and the item on top of the table</li>
                 </ul>
-                <p className="text-purple-900 font-semibold mt-3">From €60</p>
+                <p className="text-purple-900 font-semibold mt-3">From €60 (contact me for more info)</p>
               </div>
             </div>
 
