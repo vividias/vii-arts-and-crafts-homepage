@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Mail, Palette, Heart, Sparkles } from "lucide-react"
 import Link from "next/link"
+import { creations } from "@/data/creationsData";
 
 // Add custom TikTok icon component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -24,6 +25,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
+          {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-to-br from-orange-300 to-purple-300 rounded-full flex items-center justify-center">
               <Heart className="w-6 h-6 text-white" />
@@ -33,17 +35,45 @@ export default function Home() {
               <p className="text-sm text-orange-700">& crafts</p>
             </div>
           </div>
+
+          {/* Navigation links */}
+          <div className="flex space-x-6 text-purple-900 font-medium">
+            <a
+              href="#shop"
+              className="hover:text-orange-500 transition-colors"
+            >
+              Shop
+            </a>
+            <a
+              href="#creations"
+              className="hover:text-orange-500 transition-colors"
+            >
+              Creations
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-orange-500 transition-colors"
+            >
+              Contact
+            </a>
           </div>
+        </div>
       </nav>
 
       {/* About Section */}
-      <section className="container mx-auto px-6 py-20 text-center">
+      <section className="container mx-auto px-6 py-5 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 flex justify-center">
             <div className="relative">
-              <div className="w-32 h-32 bg-gradient-to-br from-orange-200 via-purple-200 to-pink-200 rounded-full flex items-center justify-center mb-4">
-                <Palette className="w-16 h-16 text-purple-600" />
+              {/* Circle with your photo */}
+              <div className="w-32 h-32 bg-gradient-to-br from-orange-200 via-purple-200 to-pink-200 rounded-full flex items-center justify-center mb-4 overflow-hidden">
+                <img
+                  src="/images/vii.jpeg"
+                  alt="Viviana"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
+
               <div className="absolute -top-2 -right-2">
                 <Sparkles className="w-8 h-8 text-orange-400" />
               </div>
@@ -58,73 +88,90 @@ export default function Home() {
             <span className="text-purple-800">& crafts</span>
           </h1>
           <p className="text-xl text-purple-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Creating adorable clay pieces, whimsical paintings, and charming handmade treasures that bring joy!
-          </p>
+          Hi, I'm Viviana!
+          I'm a creator who loves bringing artsy ideas to life ✨ — 
+          from playful clay pieces to colorful paintings and all kinds of crafty projects. 
+          My style is still evolving, but it always leans toward the cute and heartfelt. 
+          Every piece is made with love, and I hope you enjoy exploring my work as much as I enjoy making it.          </p>
         </div>
+        
+      </section>
 
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-white/60 border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-200 to-orange-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <div className="w-8 h-8 bg-orange-400 rounded-full"></div>
-                </div>
-                <h3 className="text-xl font-medium text-purple-900 mb-3">Clay Pieces</h3>
-                <p className="text-purple-700">
-                  Adorable miniature sculptures, cute figurines, and functional pottery pieces made with love.
-                </p>
-              </CardContent>
-            </Card>
+      {/* Shop Section */}
+      <section id="shop" className="container mx-auto px-6 py-20 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-light text-purple-900 mb-6">Shop</h2>
 
-            <Card className="bg-white/60 border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-200 to-purple-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Palette className="w-8 h-8 text-purple-500" />
-                </div>
-                <h3 className="text-xl font-medium text-purple-900 mb-3">Paintings</h3>
-                <p className="text-purple-700">
-                  Cozy acrylics, and dreamy illustrations that capture magical moments.
-                </p>
-              </CardContent>
-            </Card>
+          {/* New item(s) */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="bg-white/60 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="aspect-square relative">
+                <img
+                  src="/images/Clay_Frame_Cats.jpg"
+                  alt="Cat Room Frame"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 text-left">
+                <h3 className="text-xl font-medium text-purple-900 mb-2">
+                  Cat Room Frame
+                </h3>
+                <ul className="text-purple-700 text-sm space-y-1">
+                  <li>• Hand-sculpted clay</li>
+                  <li>• Custom cat/cats</li>
+                  <li>• Personalization of the wallpaper, the framed painting, and the item on top of the table</li>
+                </ul>
+                <p className="text-purple-900 font-semibold mt-3">From €60</p>
+              </div>
+            </div>
 
-            <Card className="bg-white/60 border-0 shadow-lg hover:shadow-xl transition-shadow">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-200 to-pink-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Sparkles className="w-8 h-8 text-pink-500" />
-                </div>
-                <h3 className="text-xl font-medium text-purple-900 mb-3">Other Crafts</h3>
-                <p className="text-purple-700">
-                  Crochet, embroidery, jewelry making, and who knows?
+            {/* Coming soon */}
+            <div className="bg-white/60 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="aspect-square relative bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 flex items-center justify-center">
+                <span className="text-purple-400 text-2xl font-medium opacity-70">
+                  Coming Soon
+                </span>
+              </div>
+              <div className="p-6 text-left">
+                <h3 className="text-xl font-medium text-purple-900 mb-2">Coming Soon</h3>
+                <p className="text-purple-700 text-sm">
+                  A new handmade creation will appear here soon.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+
           </div>
+          
         </div>
-
       </section>
 
       {/* Creations Section */}
-      <section id="creations" className="container mx-auto px-6 py-20">
+     <section id="creations" className="container mx-auto px-6 py-5">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-light text-purple-900 text-center mb-12">My Creations</h2>
+          <h2 className="text-4xl font-light text-purple-900 text-center mb-12">
+            My Creations
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { emoji: "🌸", title: "Soon", type: "Clay" },
-              { emoji: "🐱", title: "Soon", type: "Acrylic" },
-              { emoji: "🦋", title: "Soon", type: "Jewelry" },
-            ].map((item, index) => (
+            {creations.map((item, index) => (
               <Card
                 key={index}
                 className="bg-white/60 border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1"
               >
                 <div className="aspect-square bg-gradient-to-br from-orange-100 via-purple-100 to-pink-100 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl opacity-60">{item.emoji}</div>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
-                  </div>
+                  {/* Show video or image */}
+                  {item.isVideo ? (
+                    <video
+                      src={item.media}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      controls
+                    />
+                  ) : (
+                    <img
+                      src={item.media}
+                      alt={item.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  )}
                   <div className="absolute bottom-4 left-4">
                     <span className="text-xs bg-white/80 px-2 py-1 rounded-full text-purple-700 font-medium">
                       {item.type}
@@ -132,20 +179,14 @@ export default function Home() {
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-medium text-purple-900 mb-2">{item.title}</h3>
-                  <p className="text-purple-700 text-sm">Coming to the gallery soon...</p>
+                  <h3 className="text-lg font-medium text-purple-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-purple-700 text-sm">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Shop Section */}
-      <section id="shop" className="container mx-auto px-6 py-20 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-light text-purple-900 mb-6">Shop</h2>
-          <p className="text-purple-700 text-xl"> * Opening Soon * </p>
         </div>
       </section>
 

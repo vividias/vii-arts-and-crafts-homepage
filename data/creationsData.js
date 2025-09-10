@@ -1,0 +1,66 @@
+// src/data/creationsData.js
+export const creations = [
+  {
+    type: "Clay",
+    media: "/images/Clay_Angel_Sunny.jpg",
+    title: "Sunny",
+    description: "Hand-sculpted air dry clay",
+    isVideo: false,
+  },
+  {
+    type: "Clay",
+    media: "/images/Clay_Dirty.jpg", 
+    title: "The Cat That Became Dirt",
+    description: "Hand-sculpted air dry clay",
+    isVideo: false,
+  },
+  {
+    type: "Clay",
+    media: "/images/Clay_Frame_Cats.jpg", 
+    title: "Cat Room Frame",
+    description: "Hand-sculpted air dry clay",
+    isVideo: false,
+  },
+    {
+    type: "Clay",
+    media: "/images/Clay_LittleBuddies.jpg", 
+    title: "Little Buddies Magnets",
+    description: "Hand-sculpted air dry clay",
+    isVideo: false,
+  },
+   {
+    type: "Clay",
+    media: "/images/Clay_Yellow_CareBear.jpg", 
+    title: "Funshine Bear Desk Buddy / Charm",
+    description: "Hand-sculpted air dry clay",
+    isVideo: false,
+  },
+    {
+    type: "Acrylic",
+    media: "/images/Acrylic_Tupi.jpg", 
+    title: "Painting of Tupi",
+    description: "Acrylic Painting",
+    isVideo: false,
+  },
+  {
+    type: "Acrylic",
+    media: "/images/Acrylic_Otter_Couple.jpg", 
+    title: "Painting of an Otter Couple",
+    description: "Acrylic Painting",
+    isVideo: false,
+  },
+  {
+    type: "Acrylic",
+    media: "/images/Tile_Cats_Tulip.jpg", 
+    title: "Tile Painting of Two Cats",
+    description: "Tile Painting",
+    isVideo: false,
+  },
+  {
+    type: "Clay",
+    media: "/images/Clay_Magnet_SolESombra.jpg", 
+    title: "Magnet of a Restaurant's House Front",
+    description: "Air Dry Clay",
+    isVideo: false,
+  },
+];
