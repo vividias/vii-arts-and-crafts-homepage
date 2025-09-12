@@ -1,8 +1,16 @@
+'use client'
+
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Palette, Heart, Sparkles } from "lucide-react"
+import { Mail, Heart, Sparkles, ShoppingBag } from "lucide-react"
 import Link from "next/link"
+import { useTranslation } from 'react-i18next'
 import { creations } from "@/data/creationsData";
+import { shopItems } from "@/data/shopData";
+import { appWithTranslation } from 'next-i18next'
+import '../i18n'
+
 
 // Add custom TikTok icon component
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -19,9 +27,12 @@ const InstaIcon =  ({ className }: { className?: string }) => (
   </svg>
 )
 
-export default function Home() {
+function Home() {
+  const { t } = useTranslation('common')
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-purple-50 to-pink-50">
+
       {/* Navigation */}
       <nav className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
@@ -88,11 +99,8 @@ export default function Home() {
             <span className="text-purple-800">& crafts</span>
           </h1>
           <p className="text-xl text-purple-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Hi, I'm Viviana!
-          I'm a creator who loves bringing artsy ideas to life ✨ — 
-          from playful clay pieces to colorful paintings and all kinds of crafty projects. 
-          My style is still evolving, but it always leans toward the cute and heartfelt. 
-          Every piece is made with love, and I hope you enjoy exploring my work as much as I enjoy making it.          </p>
+            {t('intro.text')}
+          </p>
         </div>
         
       </section>
@@ -104,41 +112,53 @@ export default function Home() {
 
           {/* New item(s) */}
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <div className="bg-white/60 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className="aspect-square relative">
-                <img
-                  src="/images/Clay_Frame_Cats.jpg"
-                  alt="Cat Room Frame"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="text-xl font-medium text-purple-900 mb-2">
-                  Cat Room Frame
-                </h3>
-                <ul className="text-purple-700 text-sm space-y-1">
-                  <li>• Hand-sculpted clay</li>
-                  <li>• Custom cat/cats</li>
-                  <li>• Personalization of the wallpaper, the framed painting, and the item on top of the table</li>
-                </ul>
-                <p className="text-purple-900 font-semibold mt-3">From €60 (contact me for more info)</p>
-              </div>
-            </div>
-
-            {/* Coming soon */}
-            <div className="bg-white/60 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className="aspect-square relative bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 flex items-center justify-center">
-                <span className="text-purple-400 text-2xl font-medium opacity-70">
-                  Coming Soon
-                </span>
-              </div>
-              <div className="p-6 text-left">
-                <h3 className="text-xl font-medium text-purple-900 mb-2">Coming Soon</h3>
-                <p className="text-purple-700 text-sm">
-                  A new handmade creation will appear here soon.
-                </p>
-              </div>
-            </div>
+            
+            {shopItems.map((item) =>
+              item.comingSoon ? (
+                // Coming soon card
+                <div
+                  key={item.id}
+                  className="bg-white/60 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1"
+                >
+                  <div className="aspect-square relative bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 flex items-center justify-center">
+                    <span className="text-purple-400 text-2xl font-medium opacity-70">
+                      Coming Soon
+                    </span>
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-medium text-purple-900 mb-2">{item.title}</h3>
+                    <p className="text-purple-700 text-sm">{item.description}</p>
+                  </div>
+                </div>
+              ) : (
+                // Normal item card
+                <div
+                  key={item.id}
+                  className="bg-white/60 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1"
+                >
+                  <div className="aspect-square relative">
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6 text-left">
+                    <h3 className="text-xl font-medium text-purple-900 mb-2">{item.title}</h3>
+                    {item.features && (
+                      <ul className="text-purple-700 text-sm space-y-1">
+                        {item.features.map((feature, idx) => (
+                          <li key={idx}>• {feature}</li>
+                        ))}
+                      </ul>
+                    )}
+                    {item.price && (
+                      <p className="text-purple-900 font-semibold mt-3">{item.price}</p>
+                    )}
+                  </div>
+                </div>
+              )
+            )}
 
           </div>
           
@@ -155,7 +175,7 @@ export default function Home() {
             {creations.map((item, index) => (
               <Card
                 key={index}
-                className="bg-white/60 border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1"
+                className="bg-white/60 border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1 relative"
               >
                 <div className="aspect-square bg-gradient-to-br from-orange-100 via-purple-100 to-pink-100 relative">
                   {/* Show video or image */}
@@ -172,18 +192,26 @@ export default function Home() {
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   )}
-                  <div className="absolute bottom-4 left-4">
+
+                  {/* badge always visible */}
+                  <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
                     <span className="text-xs bg-white/80 px-2 py-1 rounded-full text-purple-700 font-medium">
                       {item.type}
                     </span>
+
+                    {item.availableInShop && (
+                      <Link href="#shop" className="bg-white/80 rounded-full p-1 hover:bg-white transition">
+                        <ShoppingBag size={16} className="text-purple-700" />
+                      </Link>
+                    )}
+                  </div>
+
+                  {/* overlay with title + description (hidden by default) */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 className="text-lg font-medium text-white mb-2">{item.title}</h3>
+                    <p className="text-white text-sm">{item.description}</p>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-medium text-purple-900 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-purple-700 text-sm">{item.description}</p>
-                </CardContent>
               </Card>
             ))}
           </div>
@@ -261,3 +289,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default appWithTranslation(Home)

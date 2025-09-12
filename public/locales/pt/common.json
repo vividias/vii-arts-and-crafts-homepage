@@ -1,0 +1,18 @@
+{
+    "intro": {
+      "text": "Olá!\nI'm a creator who loves bringing artsy ideas to life ✨ — \nfrom playful clay pieces to colorful paintings and all kinds of crafty projects.\nMy style is still evolving, but it always leans toward the cute and heartfelt.\nEvery piece is made with love, and I hope you enjoy exploring my work as much as I enjoy making it."
+    },
+    "navbar": {
+      "shop": "Shop",
+      "creations": "Creations",
+      "contact": "Contact"
+    },
+    "contact": {
+      "text": "I'm currently accepting custom commissions ✨ whether you'd like to bring a personal idea to reality or have a piece featured in my collection. Feel free to reach out by email anytime.",
+      "socialTitle": "Follow my creative journey!",
+      "socialDescription": "Clay and painting creations and processes"
+    },
+    "page": {
+      "Footer": "© 2025 vii arts & crafts. Made with love and lots of clay dust ✨"
+    }
+}
