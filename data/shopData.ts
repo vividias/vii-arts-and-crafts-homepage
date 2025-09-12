@@ -18,7 +18,7 @@ export const shopItems: ShopItem[] = [
     features: [
       "Frame + Hand-sculpted clay",
       "Custom cat/cats",
-      "Personalization of the wallpaper, the framed painting, and the item on top of the table",
+      "Option for custom wallpaper, framed painting and personalized item"
     ],
     price: "From €60 (contact me for more info)",
   },
