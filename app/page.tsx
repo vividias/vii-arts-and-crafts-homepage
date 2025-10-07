@@ -161,6 +161,18 @@ function Home() {
             )}
 
           </div>
+
+           {/* Etsy Shop Link */}
+          <div>
+            <a
+              href="https://www.etsy.com/shop/ViiArtsyCrafty"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white text-lg font-medium py-3 px-8 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              Visit My Etsy Shop ✨
+            </a>
+          </div>
           
         </div>
       </section>
