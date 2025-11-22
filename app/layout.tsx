@@ -3,6 +3,7 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 import i18next from 'i18next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({
         `}</style>
       </head>
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-NDS84TB4TF" />
     </html>
   )
 }
