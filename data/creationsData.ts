@@ -84,7 +84,7 @@ export const creations: CreationItem[] = [
    {
     id: "fairy-carebear",
     type: "Clay",
-    media: "/images/Clay_GlitterwisheBear.jpg", 
+    media: "/images/Clay_GlitterwishBear.jpg", 
     title: "Glitterwish Bear Desk Buddy",
     description: "Air dry clay",
     isVideo: false,
