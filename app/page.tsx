@@ -296,7 +296,7 @@ function Home() {
             <p className="text-purple-800 text-sm">& crafts</p>
           </div>
         </div>
-        <p className="text-purple-700 text-sm">© 2025 vii arts & crafts. Made with love and lots of clay dust ✨</p>
+        <p className="text-purple-700 text-sm">© 2026 vii arts & crafts. Made with love and lots of clay dust ✨</p>
       </footer>
     </div>
   )
