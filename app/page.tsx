@@ -33,8 +33,9 @@ function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-purple-50 to-pink-50">
 
-      {/* Navigation */}
-      <nav className="container mx-auto px-6 py-6">
+    {/* Navigation */}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
+      <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
@@ -56,6 +57,12 @@ function Home() {
               Shop
             </a>
             <a
+              href="#free-downloads"
+              className="hover:text-orange-500 transition-colors"
+            >
+              Freebies
+            </a>
+            <a
               href="#creations"
               className="hover:text-orange-500 transition-colors"
             >
@@ -69,10 +76,12 @@ function Home() {
             </a>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
+
 
       {/* About Section */}
-      <section className="container mx-auto px-6 py-5 text-center">
+      <section className="container mx-auto px-6 py-5 pt-28 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 flex justify-center">
             <div className="relative">
@@ -105,47 +114,8 @@ function Home() {
         
       </section>
 
-      {/* Free Downloads Section */}
-      <section id="free-downloads" className="container mx-auto px-6 py-5 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-light text-purple-900 mb-6">
-            Free Downloads
-          </h2>
-
-          <div className="flex justify-center">
-            {/* Free Download */}
-            <a
-              href="/downloads/Moochy Coasters.pdf"
-              download
-              className="bg-white rounded-2xl p-5 shadow-sm w-full max-w-sm hover:shadow-md transition-shadow"
-            >
-              <div className="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
-                <img
-                  src="/downloads/Moochy Coasters Preview.png"
-                  alt="Moochy Coasters Step By Step Guide preview"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <h3 className="text-xl font-medium text-purple-900 mb-2">
-                Moochy Coasters Step By Step Guide
-              </h3>
-
-              <p className="text-sm text-purple-700 mb-4">
-                Make your own Moochy Coasters!
-              </p>
-
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-400 text-white text-sm rounded-full">
-                <Download className="w-4 h-4" />
-                Download PDF
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Shop Section */}
-      <section id="shop" className="container mx-auto px-6 py-5 text-center">
+      <section id="shop" className="container mx-auto px-6 py-5 text-center scroll-mt-28">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-light text-purple-900 mb-6">Shop</h2>
 
@@ -216,8 +186,43 @@ function Home() {
         </div>
       </section>
 
+      {/* Free Downloads Section */}
+      <section id="free-downloads" className="container mx-auto px-6 py-5 text-center scroll-mt-28">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-light text-purple-900 mb-6">
+            Free Downloads
+          </h2>
+
+          <div className="flex justify-center">
+            {/* Free Download */}
+            <a
+              href="/downloads/Moochy Coasters.pdf"
+              download
+              className="bg-white rounded-2xl p-3 shadow-sm w-[220px] hover:shadow-md transition-shadow"
+            >
+              <div className="aspect-[4/3] rounded-xl mb-3 overflow-hidden">
+                <img
+                  src="/downloads/Moochy Coasters Preview.png"
+                  alt="Moochy Coasters Step By Step Guide preview"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <h3 className="text-base font-medium text-purple-900 mb-1">
+                DIY Moochy Coasters Step By Step Guide
+              </h3>
+
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-orange-400 text-white text-xs rounded-full">
+                <Download className="w-3.5 h-3.5" />
+                Download PDF
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Creations Section */}
-     <section id="creations" className="container mx-auto px-6 py-5">
+     <section id="creations" className="container mx-auto px-6 py-5 scroll-mt-28">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-light text-purple-900 text-center mb-12">
             My Creations
@@ -270,7 +275,7 @@ function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="container mx-auto px-6 py-20">
+      <section id="contact" className="container mx-auto px-6 py-5 scroll-mt-28">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl font-light text-purple-900 mb-8">Let's Connect</h2>
           <p className="text-xl text-purple-700 mb-12">
