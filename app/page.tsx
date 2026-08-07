@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Heart, Sparkles, ShoppingBag } from "lucide-react"
+import { Mail, Heart, Sparkles, ShoppingBag, FileText, Download } from "lucide-react"
 import Link from "next/link"
 import { useTranslation } from 'react-i18next'
 import { creations } from "@/data/creationsData";
@@ -105,8 +105,47 @@ function Home() {
         
       </section>
 
+      {/* Free Downloads Section */}
+      <section id="free-downloads" className="container mx-auto px-6 py-5 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-light text-purple-900 mb-6">
+            Free Downloads
+          </h2>
+
+          <div className="flex justify-center">
+            {/* Free Download */}
+            <a
+              href="/downloads/Moochy Coasters.pdf"
+              download
+              className="bg-white rounded-2xl p-5 shadow-sm w-full max-w-sm hover:shadow-md transition-shadow"
+            >
+              <div className="aspect-[4/3] rounded-xl mb-4 overflow-hidden">
+                <img
+                  src="/downloads/Moochy Coasters Preview.png"
+                  alt="Moochy Coasters Step By Step Guide preview"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <h3 className="text-xl font-medium text-purple-900 mb-2">
+                Moochy Coasters Step By Step Guide
+              </h3>
+
+              <p className="text-sm text-purple-700 mb-4">
+                Make your own Moochy Coasters!
+              </p>
+
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-400 text-white text-sm rounded-full">
+                <Download className="w-4 h-4" />
+                Download PDF
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Shop Section */}
-      <section id="shop" className="container mx-auto px-6 py-20 text-center">
+      <section id="shop" className="container mx-auto px-6 py-5 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-light text-purple-900 mb-6">Shop</h2>
 
