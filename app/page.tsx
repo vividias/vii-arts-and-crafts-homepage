@@ -35,26 +35,33 @@ function Home() {
 
     {/* Navigation */}
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
-      <div className="container mx-auto px-6 py-6">
+      <div className="container mx-auto px-6 md:px-8 py-6">
         <div className="flex items-center justify-between">
+
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-to-br from-orange-300 to-purple-300 rounded-full flex items-center justify-center">
               <Heart className="w-6 h-6 text-white" />
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-purple-900">vii arts</h1>
-              <p className="text-sm text-orange-700">& crafts</p>
+
+            {/* Hidden on smaller screens */}
+            <div className="hidden md:block">
+              <h1 className="text-xl font-bold text-purple-900">
+                vii arts
+              </h1>
+              <p className="text-sm text-orange-700">
+                & crafts
+              </p>
             </div>
           </div>
 
           {/* Navigation links */}
-          <div className="flex space-x-6 text-purple-900 font-medium">
+          <div className="flex space-x-4 md:space-x-6 px-2 md:px-4 text-purple-900 font-medium">
             <a
               href="#shop"
               className="hover:text-orange-500 transition-colors"
             >
-              Shop
+          Shop
             </a>
             <a
               href="#free-downloads"
