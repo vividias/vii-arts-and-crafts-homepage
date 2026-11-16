@@ -32,7 +32,17 @@ function Home() {
   const { t } = useTranslation('common')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+    <div className="relative isolate min-h-screen overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <div className="pointer-events-none absolute inset-0 z-0 select-none" aria-hidden="true">
+        <img src="/decor/yourlittlebuddy_cloudy_normal.png" alt="" className="absolute left-[3%] top-40 w-28 -rotate-12 opacity-100" />
+        <img src="/decor/yourlittlebuddy_moochy_normal.png" alt="" className="absolute right-[4%] top-[28rem] w-28 rotate-12 opacity-100" />
+        <img src="/decor/yourlittlebuddy_bouncy_normal.png" alt="" className="absolute left-[7%] top-[58rem] w-28 rotate-6 opacity-100" />
+        <img src="/decor/yourlittlebuddy_tuloo_normal.png" alt="" className="absolute right-[8%] top-[82rem] w-28 -rotate-6 opacity-100" />
+        <img src="/decor/yourlittlebuddy_peepy_normal.png" alt="" className="absolute left-[4%] top-[112rem] w-28 rotate-12 opacity-100" />
+        <img src="/decor/yourlittlebuddy_whisky_normal.png" alt="" className="absolute right-[5%] top-[142rem] w-28 -rotate-12 opacity-100" />
+      </div>
+
+      <div className="relative z-10">
 
     {/* Navigation */}
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#ffd0e3] backdrop-blur-sm">
@@ -359,6 +369,7 @@ function Home() {
         </div>
         <p className="text-purple-700 text-sm">© 2026 vii arts & crafts. Made with love and lots of clay dust ✨</p>
       </footer>
+      </div>
     </div>
   )
 }
