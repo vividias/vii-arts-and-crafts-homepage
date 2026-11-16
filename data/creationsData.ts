@@ -200,7 +200,7 @@ export const creations: CreationItem[] = [
   },
   {
     id: "tile-cats",
-    type: "Acrylic",
+    type: "Tile Painting",
     media: "/images/Tile_Cats_Tulip.jpg", 
     title: "Tile Painting of Two Cats",
     description: "Tile Painting",
