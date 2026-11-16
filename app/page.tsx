@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { creations } from "@/data/creationsData";
 import { shopItems } from "@/data/shopData";
 import { appWithTranslation } from 'next-i18next'
+import ReactMarkdown from 'react-markdown'
 import '../i18n'
 
 
@@ -31,16 +32,16 @@ function Home() {
   const { t } = useTranslation('common')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
 
     {/* Navigation */}
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#ffd0e3] backdrop-blur-sm">
       <div className="container mx-auto px-6 md:px-8 py-6">
         <div className="flex items-center justify-between">
 
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-orange-300 to-purple-300 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-300 to-purple-300 rounded-full flex items-center justify-center">
               <Heart className="w-6 h-6 text-white" />
             </div>
 
@@ -49,7 +50,7 @@ function Home() {
               <h1 className="text-xl font-bold text-purple-900">
                 vii arts
               </h1>
-              <p className="text-sm text-orange-700">
+              <p className="text-sm text-blue-700">
                 & crafts
               </p>
             </div>
@@ -59,25 +60,31 @@ function Home() {
           <div className="flex space-x-4 md:space-x-6 px-2 md:px-4 text-purple-900 font-medium">
             <a
               href="#shop"
-              className="hover:text-orange-500 transition-colors"
+              className="hover:text-blue-500 transition-colors"
             >
           Shop
             </a>
             <a
+              href="#aboutme"
+              className="hover:text-blue-500 transition-colors"
+            >
+          About Me
+            </a>
+            <a
               href="#free-downloads"
-              className="hover:text-orange-500 transition-colors"
+              className="hover:text-blue-500 transition-colors"
             >
               Freebies
             </a>
             <a
               href="#creations"
-              className="hover:text-orange-500 transition-colors"
+              className="hover:text-blue-500 transition-colors"
             >
               Creations
             </a>
             <a
               href="#contact"
-              className="hover:text-orange-500 transition-colors"
+              className="hover:text-blue-500 transition-colors"
             >
               Contact
             </a>
@@ -91,32 +98,11 @@ function Home() {
       <section className="container mx-auto px-6 py-5 pt-28 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 flex justify-center">
-            <div className="relative">
-              {/* Circle with your photo */}
-              <div className="w-32 h-32 bg-gradient-to-br from-orange-200 via-purple-200 to-pink-200 rounded-full flex items-center justify-center mb-4 overflow-hidden">
-                <img
-                  src="/images/vii.jpeg"
-                  alt="Viviana"
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-
-              <div className="absolute -top-2 -right-2">
-                <Sparkles className="w-8 h-8 text-orange-400" />
-              </div>
-              <div className="absolute -bottom-2 -left-2">
-                <Heart className="w-6 h-6 text-pink-400" />
-              </div>
-            </div>
           </div>
           <h1 className="text-5xl md:text-7xl font-light text-purple-900 mb-6">
-            <span className="text-orange-400">vii arts</span>
-            <br />
-            <span className="text-purple-800">& crafts</span>
+            <span className="text-blue-400">vii </span>
+            <span className="text-purple-800">arts & crafts</span>
           </h1>
-          <p className="text-xl text-purple-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-            {t('intro.text')}
-          </p>
         </div>
         
       </section>
@@ -128,15 +114,13 @@ function Home() {
 
           {/* New item(s) */}
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            
             {shopItems.map((item) =>
               item.comingSoon ? (
-                // Coming soon card
                 <div
                   key={item.id}
                   className="bg-white/60 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1"
                 >
-                  <div className="aspect-square relative bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 flex items-center justify-center">
+                  <div className="aspect-square relative bg-gradient-to-br from-purple-100 via-pink-100 to-blue-100 flex items-center justify-center">
                     <span className="text-purple-400 text-2xl font-medium opacity-70">
                       Coming Soon
                     </span>
@@ -147,7 +131,6 @@ function Home() {
                   </div>
                 </div>
               ) : (
-                // Normal item card
                 <div
                   key={item.id}
                   className="bg-white/60 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1"
@@ -175,22 +158,49 @@ function Home() {
                 </div>
               )
             )}
-
           </div>
 
-           {/* Etsy Shop Link */}
+          {/* Etsy Shop Link */}
           <div>
-            <a
-              href="https://www.etsy.com/shop/ViiArtsyCrafty"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white text-lg font-medium py-3 px-8 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
-            >
-              Visit My Etsy Shop ✨
-            </a>
+           <a
+             href="https://www.etsy.com/shop/ViiArtsyCrafty"
+             target="_blank"
+             rel="noopener noreferrer"
+             className="inline-block w-full max-w-md rounded-2xl shadow-md transition-all hover:-translate-y-1 hover:shadow-xl"
+           >
+             <img
+               src="/decor/shop_button.png"
+               alt="Visit my Etsy Shop"
+               className="h-auto w-full rounded-2xl"
+             />
+           </a>
           </div>
-          
+
         </div>
+      </section>
+
+      {/* About Me Section */}
+      <section id="aboutme" className="container mx-auto px-6 py-5 text-center scroll-mt-28">
+
+         <div className="max-w-6xl mx-auto">
+           <h2 className="text-4xl font-light text-purple-900 mb-6">About Me</h2>
+
+           <div className="mx-auto max-w-5xl text-left text-xl text-purple-700 leading-relaxed">
+             <img
+               src="/decor/me.png"
+               alt="Viviana"
+               className="float-right mb-5 ml-8 w-1/2 max-w-sm"
+             />
+             <ReactMarkdown
+               components={{
+                 p: ({ children }) => <p className="mb-5 last:mb-0">{children}</p>,
+               }}
+             >
+               {t('intro.text')}
+             </ReactMarkdown>
+           </div>
+
+           </div>
       </section>
 
       {/* Free Downloads Section */}
@@ -219,7 +229,7 @@ function Home() {
                 DIY Moochy Coasters Step By Step Guide
               </h3>
 
-              <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-orange-400 text-white text-xs rounded-full">
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-400 text-white text-xs rounded-full">
                 <Download className="w-3.5 h-3.5" />
                 Download PDF
               </div>
@@ -240,7 +250,7 @@ function Home() {
                 key={index}
                 className="bg-white/60 border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1 relative"
               >
-                <div className="aspect-square bg-gradient-to-br from-orange-100 via-purple-100 to-pink-100 relative">
+                <div className="aspect-square bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 relative">
                   {/* Show video or image */}
                   {item.isVideo ? (
                     <video
@@ -293,7 +303,7 @@ function Home() {
             <CardContent className="p-8">
               <div className="space-y-6">
                 <div className="flex items-center justify-center space-x-4">
-                  <Mail className="w-5 h-5 text-orange-400" />
+                  <Mail className="w-5 h-5 text-blue-400" />
                   <span className="text-purple-800">vii.artsycrafty@gmail.com</span>
                 </div>
 
@@ -302,7 +312,7 @@ function Home() {
                   <Link href="https://www.tiktok.com/@vii_artsycrafty" target="_blank">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-orange-400 to-pink-400 hover:from-orange-500 hover:to-pink-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                    className="bg-gradient-to-r from-blue-400 to-pink-400 hover:from-blue-500 hover:to-pink-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
                   >
                     <TikTokIcon className="w-6 h-6 mr-2" />
                     TikTok
@@ -312,7 +322,7 @@ function Home() {
                    <Link href="https://www.instagram.com/vii_artsycrafty/" target="_blank">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-purple-400 to-orange-400 hover:from-purple-500 hover:to-orange-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+                    className="bg-gradient-to-r from-purple-400 to-blue-400 hover:from-purple-500 hover:to-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
                   >
                     <InstaIcon className="w-6 h-6 mr-2" />
                     Instagram
@@ -321,9 +331,9 @@ function Home() {
 
                 </div>
 
-                <div className="bg-gradient-to-r from-orange-100 to-pink-100 rounded-lg p-6 mt-6">
+                <div className="bg-gradient-to-r from-blue-100 to-pink-100 rounded-lg p-6 mt-6">
                   <p className="text-purple-800 font-medium mb-2">
-                    <Heart className="w-5 h-5 inline mr-2 text-orange-400" />
+                    <Heart className="w-5 h-5 inline mr-2 text-blue-400" />
                     Follow my creative journey!
                   </p>
                   <p className="text-sm text-purple-700">
@@ -339,11 +349,11 @@ function Home() {
       {/* Footer */}
       <footer className="container mx-auto px-6 py-12 text-center">
         <div className="flex items-center justify-center space-x-3 mb-4">
-          <div className="w-10 h-10 bg-gradient-to-br from-orange-300 to-purple-300 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-blue-300 to-purple-300 rounded-full flex items-center justify-center">
             <Heart className="w-5 h-5 text-white" />
           </div>
           <div>
-            <p className="text-orange-400 font-medium">vii arts</p>
+            <p className="text-blue-400 font-medium">vii arts</p>
             <p className="text-purple-800 text-sm">& crafts</p>
           </div>
         </div>
