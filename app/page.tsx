@@ -34,12 +34,12 @@ function Home() {
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       <div className="pointer-events-none absolute inset-0 z-0 select-none" aria-hidden="true">
-        <img src="/decor/yourlittlebuddy_cloudy_normal.png" alt="" className="absolute left-[3%] top-40 w-28 -rotate-12 opacity-100" />
-        <img src="/decor/yourlittlebuddy_moochy_normal.png" alt="" className="absolute right-[4%] top-[28rem] w-28 rotate-12 opacity-100" />
-        <img src="/decor/yourlittlebuddy_bouncy_normal.png" alt="" className="absolute left-[7%] top-[58rem] w-28 rotate-6 opacity-100" />
-        <img src="/decor/yourlittlebuddy_tuloo_normal.png" alt="" className="absolute right-[8%] top-[82rem] w-28 -rotate-6 opacity-100" />
-        <img src="/decor/yourlittlebuddy_peepy_normal.png" alt="" className="absolute left-[4%] top-[112rem] w-28 rotate-12 opacity-100" />
-        <img src="/decor/yourlittlebuddy_whisky_normal.png" alt="" className="absolute right-[5%] top-[142rem] w-28 -rotate-12 opacity-100" />
+        <img src="/decor/yourlittlebuddy_cloudy_normal.png" alt="" className="absolute left-[3%] top-40 hidden w-28 -rotate-12 opacity-100 md:block" />
+        <img src="/decor/yourlittlebuddy_moochy_normal.png" alt="" className="absolute right-[4%] top-[28rem] hidden w-28 rotate-12 opacity-100 md:block" />
+        <img src="/decor/yourlittlebuddy_bouncy_normal.png" alt="" className="absolute left-[7%] top-[58rem] hidden w-28 rotate-6 opacity-100 md:block" />
+        <img src="/decor/yourlittlebuddy_tuloo_normal.png" alt="" className="absolute right-[8%] top-[82rem] hidden w-28 -rotate-6 opacity-100 md:block" />
+        <img src="/decor/yourlittlebuddy_peepy_normal.png" alt="" className="absolute left-[4%] top-[112rem] hidden w-28 rotate-12 opacity-100 md:block" />
+        <img src="/decor/yourlittlebuddy_whisky_normal.png" alt="" className="absolute right-[5%] top-[142rem] hidden w-28 -rotate-12 opacity-100 md:block" />
       </div>
 
       <div className="relative z-10">
@@ -67,34 +67,34 @@ function Home() {
           </div>
 
           {/* Navigation links */}
-          <div className="flex space-x-4 md:space-x-6 px-2 md:px-4 text-purple-900 font-medium">
+          <div className="flex space-x-2 px-1 text-xs font-medium text-purple-900 sm:space-x-4 sm:text-sm md:space-x-6 md:px-4">
             <a
               href="#shop"
-              className="hover:text-blue-500 transition-colors"
+              className="whitespace-nowrap transition-colors hover:text-blue-500"
             >
           Shop
             </a>
             <a
               href="#aboutme"
-              className="hover:text-blue-500 transition-colors"
+              className="whitespace-nowrap transition-colors hover:text-blue-500"
             >
           About Me
             </a>
             <a
               href="#free-downloads"
-              className="hover:text-blue-500 transition-colors"
+              className="whitespace-nowrap transition-colors hover:text-blue-500"
             >
               Freebies
             </a>
             <a
               href="#creations"
-              className="hover:text-blue-500 transition-colors"
+              className="whitespace-nowrap transition-colors hover:text-blue-500"
             >
               Creations
             </a>
             <a
               href="#contact"
-              className="hover:text-blue-500 transition-colors"
+              className="whitespace-nowrap transition-colors hover:text-blue-500"
             >
               Contact
             </a>
@@ -208,6 +208,15 @@ function Home() {
              >
                {t('intro.text')}
              </ReactMarkdown>
+
+             <div className="mt-8 flex items-end justify-between gap-1 md:hidden">
+               <img src="/decor/yourlittlebuddy_cloudy_normal.png" alt="" className="h-auto w-[15%]" />
+               <img src="/decor/yourlittlebuddy_moochy_normal.png" alt="" className="h-auto w-[15%]" />
+               <img src="/decor/yourlittlebuddy_bouncy_normal.png" alt="" className="h-auto w-[15%]" />
+               <img src="/decor/yourlittlebuddy_tuloo_normal.png" alt="" className="h-auto w-[15%]" />
+               <img src="/decor/yourlittlebuddy_peepy_normal.png" alt="" className="h-auto w-[15%]" />
+               <img src="/decor/yourlittlebuddy_whisky_normal.png" alt="" className="h-auto w-[15%]" />
+             </div>
            </div>
 
            </div>
